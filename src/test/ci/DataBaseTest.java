@@ -1,4 +1,4 @@
-package ci;
+package db61b;
 
 import org.junit.Assert;
 import org.junit.Test;
