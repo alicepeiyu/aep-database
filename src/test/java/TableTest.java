@@ -37,18 +37,18 @@ public class TableTest {
 //        }
     }
 //
-//    @Test
-//    public void testFindColumn() {
-//        String[] columnTitles = new String[]{"SID", "Name", "Major"};
-//        Table table = new Table(columnTitles);
-//        int actual = table.findColumn("SID");
-//        int expected = 0;
-//        assertEquals(expected, actual);
-//
-//        int actual1 = table.findColumn("LastName");
-//        int expected1 = -1;
-//        assertEquals(expected1, actual1);
-//    }
+    @Test
+    public void testFindColumn() {
+        String[] columnTitles = new String[]{"SID", "Name", "Major"};
+        Table table = new Table(columnTitles);
+        int actual = table.findColumn("SID");
+        int expected = 0;
+        assertEquals(expected, actual);
+
+        int actual1 = table.findColumn("LastName");
+        int expected1 = -1;
+        assertEquals(expected1, actual1);
+    }
 //
 //    @Test
 //    public void testSize() {
