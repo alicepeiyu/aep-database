@@ -21,21 +21,21 @@ public class TableTest {
 
     }
 
-//    @Test
-//    public void testGetTitle() {
-//        String[] columnTitles = new String[]{"SID", "Name", "Major"};
-//        Table table = new Table(columnTitles);
-//        String actual = table.getTitle(1);
-//        String expected = "Name";
-//        assertEquals(expected, actual);
-//
-////        try {
-////            String actual1 = table.getTitle(3);
-////            String actual2 = table.getTitle(-1);
-////        } catch (DBException e) {
-////            Assert.assertTrue(true);
-////        }
-//    }
+    @Test
+    public void testGetTitle() {
+        String[] columnTitles = new String[]{"SID", "Name", "Major"};
+        Table table = new Table(columnTitles);
+        String actual = table.getTitle(1);
+        String expected = "Name";
+        assertEquals(expected, actual);
+
+//        try {
+//            String actual1 = table.getTitle(3);
+//            String actual2 = table.getTitle(-1);
+//        } catch (DBException e) {
+//            Assert.assertTrue(true);
+//        }
+    }
 //
 //    @Test
 //    public void testFindColumn() {
