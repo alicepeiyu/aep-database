@@ -50,26 +50,26 @@ public class TableTest {
         assertEquals(expected1, actual1);
     }
 //
-//    @Test
-//    public void testSize() {
-//        String[] columnTitles = new String[]{"SID", "Name", "Major"};
-//        Table table = new Table(columnTitles);
-//        int actual = table.size();
-//        int expected = 0;
-//        assertEquals(expected, actual);
-//
-//        String[] values = new String[]{"1", "Alice", "MIMS"};
-//        table.add(values);
-//        int actual1 = table.size();
-//        int expected1 = 1;
-//        assertEquals(expected1, actual1);
-//
-//        String[] values1 = new String[]{"2", "Jason", "EECS"};
-//        table.add(values1);
-//        int actual2 = table.size();
-//        int expected2 = 2;
-//        assertEquals(expected2, actual2);
-//    }
+    @Test
+    public void testSize() {
+        String[] columnTitles = new String[]{"SID", "Name", "Major"};
+        Table table = new Table(columnTitles);
+        int actual = table.size();
+        int expected = 0;
+        assertEquals(expected, actual);
+
+        String[] values = new String[]{"1", "Alice", "MIMS"};
+        table.add(values);
+        int actual1 = table.size();
+        int expected1 = 1;
+        assertEquals(expected1, actual1);
+
+        String[] values1 = new String[]{"2", "Jason", "EECS"};
+        table.add(values1);
+        int actual2 = table.size();
+        int expected2 = 2;
+        assertEquals(expected2, actual2);
+    }
 //
 //    @Test
 //    public void testGet() {
