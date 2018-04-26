@@ -1,5 +1,6 @@
 package db61b;
 
+
 import java.io.PrintStream;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,15 +26,15 @@ class Tokenizer {
      *  sequences, or other single characters.  The pattern matches a
      *  prefix of any string. */
     private static final Pattern
-        TOKEN_PATN = mkPatn("(?s)[<>!]?=|%s|%s|%s|\r?\n|\\S",
+        TOKEN_PATN = Utils.mkPatn("(?s)[<>!]?=|%s|%s|%s|\r?\n|\\S",
                             LITERAL_TEXT, IDENTIFIER_TEXT, COMMENT_TEXT);
 
     /** Patterns matching specific kinds of token.  These are intended
      *  to be used with methods such as CommandInterpreter.name. */
     static final Pattern
-        IDENTIFIER = mkPatn(IDENTIFIER_TEXT),
-        LITERAL = mkPatn("'.*"),
-        RELATION = mkPatn("[<>!]?=|[<>]");
+        IDENTIFIER = Utils.mkPatn(IDENTIFIER_TEXT),
+        LITERAL = Utils.mkPatn("'.*"),
+        RELATION = Utils.mkPatn("[<>!]?=|[<>]");
 
     /** A Tokenizer that reads tokens from S, and prompts on PROMPTER,
      *  if it is non-null. */
@@ -59,11 +60,11 @@ class Tokenizer {
                 token = "*EOF*";
             } else if (token.startsWith("'")) {
                 if (token.length() == 1 || !token.endsWith("'")) {
-                    throw error("unterminated literal constant");
+                    throw Utils.error("unterminated literal constant");
                 }
             } else if (token.startsWith("/*")) {
                 if (token.length() < 4 || !token.endsWith("*/")) {
-                    throw error("unterminated comment");
+                    throw Utils.error("unterminated comment");
                 }
                 continue;
             } else if (token.endsWith("\n")) {
@@ -102,9 +103,9 @@ class Tokenizer {
     String next(Pattern p) {
         if (!nextIs(p)) {
             if (nextIs("*EOF*")) {
-                throw error("unexpected end of input");
+                throw Utils.error("unexpected end of input");
             } else {
-                throw error("unexpected token: '%s'", peek());
+                throw Utils.error("unexpected token: '%s'", peek());
             }
         }
         return next();
@@ -115,9 +116,9 @@ class Tokenizer {
     String next(String p) {
         if (!nextIs(p)) {
             if (nextIs("*EOF*")) {
-                throw error("unexpected end of input");
+                throw Utils.error("unexpected end of input");
             } else {
-                throw error("unexpected token: '%s'", peek());
+                throw Utils.error("unexpected token: '%s'", peek());
             }
         }
         return next();

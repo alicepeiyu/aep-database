@@ -1,5 +1,6 @@
 package db61b;
 
+
 import java.util.Scanner;
 
 /** The main program for db61b.

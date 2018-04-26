@@ -1,5 +1,6 @@
 package db61b;
 
+
 import java.util.regex.Pattern;
 
 /** Various utilities used by other sources.
@@ -21,8 +22,8 @@ class Utils {
 
     /** Return a DBException whose message is formed from S and ARGS as for
      *  String.format. */
-    static DBException error(String s, Object ... args) {
-        return new DBException(format(s, args));
+    static db61b.DBException error(String s, Object ... args) {
+        return new db61b.DBException(format(s, args));
     }
 
 }

@@ -1,4 +1,5 @@
-package ci;
+package db61b;
+
 
 public class InterestCalculator {
 

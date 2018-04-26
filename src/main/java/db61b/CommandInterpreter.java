@@ -1,5 +1,6 @@
 package db61b;
 
+
 import java.io.PrintStream;
 
 import java.util.ArrayList;
@@ -154,7 +155,7 @@ class CommandInterpreter {
             storeStatement();
             break;
         default:
-            throw error("unrecognizable command");
+            throw Utils.error("unrecognizable command");
         }
         return true;
     }
@@ -340,7 +341,7 @@ class CommandInterpreter {
         String name = name();
         Table table = _database.get(name);
         if (table == null) {
-            throw error("unknown table: %s", name);
+            throw Utils.error("unknown table: %s", name);
         }
         return table;
     }
@@ -350,7 +351,7 @@ class CommandInterpreter {
     Table tableName(String name) {
         Table table = _database.get(name);
         if (table == null) {
-            throw error("unknown table: %s", name);
+            throw Utils.error("unknown table: %s", name);
         }
         return table;
     }

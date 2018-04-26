@@ -24,7 +24,7 @@ class Column {
             }
             _tableIndex += 1;
         }
-        throw error("unknown column: %s", name);
+        throw Utils.error("unknown column: %s", name);
     }
 
     /** Return my name. */

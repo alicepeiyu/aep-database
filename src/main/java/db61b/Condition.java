@@ -1,5 +1,6 @@
 package db61b;
 
+
 import java.util.List;
 
 import static db61b.Utils.error;
@@ -18,7 +19,7 @@ class Condition {
      */
     Condition(Column col1, String relation, Column col2) {
         if (!relation.matches("[<>!]?=|[<>]")) {
-            throw error("no such relation exists");
+            throw Utils.error("no such relation exists");
         }
         _col1 = col1;
         _col2 = col2;

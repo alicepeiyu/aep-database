@@ -1,8 +1,11 @@
 package db61b;
 
+
 import java.util.HashMap;
 
 import static db61b.Utils.error;
+
+//import static db61b.Utils.error;
 
 /**
  * A collection of Tables, indexed by name.
@@ -44,7 +47,7 @@ class Database {
         if (name.matches("^[a-zA-Z0-9_]*$") && !name.matches("^[0-9]+")) {
             dataBase.put(name, table);
         } else {
-            throw error("invalid name");
+            throw Utils.error("invalid name");
         }
     }
 }

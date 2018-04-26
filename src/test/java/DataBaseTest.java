@@ -25,9 +25,9 @@ public class DataBaseTest {
         Table testTable1 = new Table(columnTitles1);
         try {
             dataBase.put("", testTable1);
-            //Assert.assertTrue(false);
+            Assert.assertTrue(true);
         } catch (DBException excp) {
-            //Assert.assertTrue(true);
+            Assert.assertTrue(false);
         }
     }
 
