@@ -71,26 +71,26 @@ public class TableTest {
         assertEquals(expected2, actual2);
     }
 //
-//    @Test
-//    public void testGet() {
-//        String[] columnTitles = new String[]{"SID", "Name", "Major"};
-//        Table table = new Table(columnTitles);
-//
-//        String[] values = new String[]{"1", "Alice", "MIMS"};
-//        table.add(values);
-//        String[] values1 = new String[]{"2", "Jason", "EECS"};
-//        table.add(values1);
-//        String actual = table.get(0, 0);
-//        String expected = "1";
-//        assertEquals(expected, actual);
-//
+    @Test
+    public void testGet() {
+        String[] columnTitles = new String[]{"SID", "Name", "Major"};
+        Table table = new Table(columnTitles);
+
+        String[] values = new String[]{"1", "Alice", "MIMS"};
+        table.add(values);
+        String[] values1 = new String[]{"2", "Jason", "EECS"};
+        table.add(values1);
+        String actual = table.get(0, 0);
+        String expected = "1";
+        assertEquals(expected, actual);
+
 //        try {
 //            String actual1 = table.get(4, 0);
 //            Assert.assertTrue(false);
 //        } catch (DBException excp) {
 //            Assert.assertTrue(true);
 //        }
-//    }
+    }
 //
 //    @Test
 //    public void testAdd() {
@@ -100,8 +100,8 @@ public class TableTest {
 //        try {
 //            String[] values = new String[]{"1", "Alice", "MIMS", "CS61B"};
 //            table.add(values);
-//        } catch (DBException excp) {
-//            Assert.assertTrue(true);
+//        } catch (DBException e) {
+//            System.out.print(e);
 //        }
 //    }
 //
@@ -156,7 +156,7 @@ public class TableTest {
 //
 //        assertEquals("Alice",expectedResult.get(0,0));
 //    }
-//
+////
 //
 //    @Test
 //    public void selectFromStudentAndEnrollTableWhoTakeCertainClass(){
@@ -180,19 +180,19 @@ public class TableTest {
 //        assertEquals("Alice",expectedResult.get(0,0));
 //    }
 //
-//    private Table createStudentTalbe(){
-//        String[] columnTitles = new String[]{"SID", "Name", "Major"};
-//        Table stduents = new Table(columnTitles);
-//        String[] values = new String[]{"1", "Alice", "MIMS"};
-//        stduents.add(values);
-//        String[] values1 = new String[]{"2", "Jason", "EECS"};
-//        stduents.add(values1);
-//        String[] values2 = new String[]{"3", "Leo", "Business"};
-//        stduents.add(values2);
-//        String[] values3 = new String[]{"4", "Cindy", "Japanese"};
-//        stduents.add(values3);
-//        return stduents;
-//    }
+    private Table createStudentTalbe(){
+        String[] columnTitles = new String[]{"SID", "Name", "Major"};
+        Table stduents = new Table(columnTitles);
+        String[] values = new String[]{"1", "Alice", "MIMS"};
+        stduents.add(values);
+        String[] values1 = new String[]{"2", "Jason", "EECS"};
+        stduents.add(values1);
+        String[] values2 = new String[]{"3", "Leo", "Business"};
+        stduents.add(values2);
+        String[] values3 = new String[]{"4", "Cindy", "Japanese"};
+        stduents.add(values3);
+        return stduents;
+    }
 //
 //    private Table createScheduleTable(){
 //        String[] columnTitles = new String[]{"CCN", "Course", "Time",
