@@ -158,27 +158,27 @@ public class TableTest {
     }
 //
 //
-//    @Test
-//    public void selectFromStudentAndEnrollTableWhoTakeCertainClass(){
-//        Table students = createStudentTalbe();
-//        Table enroll = createEnrollTable();
-//
-//        List<String> colList = new ArrayList<>();
-//        colList.add("Name");
-//        colList.add("Grade");
-//        List<Condition> conditionList = new ArrayList<>();
-//
-//        Condition con = new Condition(new Column("SID",students),new String
-//                ("="),new Column("SID",enroll));
-//        Condition con1 = new Condition(new Column("CCN",enroll ),new String
-//                ("="),new String("004"));
-//        conditionList.add(con);
-//        conditionList.add(con1);
-//        Table expectedResult = students.select(enroll,colList,conditionList);
-//
-//        assertEquals("A",expectedResult.get(0,1));
-//        assertEquals("Alice",expectedResult.get(0,0));
-//    }
+    @Test
+    public void selectFromStudentAndEnrollTableWhoTakeCertainClass(){
+        Table students = createStudentTalbe();
+        Table enroll = createEnrollTable();
+
+        List<String> colList = new ArrayList<>();
+        colList.add("Name");
+        colList.add("Grade");
+        List<Condition> conditionList = new ArrayList<>();
+
+        Condition con = new Condition(new Column("SID",students),new String
+                ("="),new Column("SID",enroll));
+        Condition con1 = new Condition(new Column("CCN",enroll ),new String
+                ("="),new String("004"));
+        conditionList.add(con);
+        conditionList.add(con1);
+        Table expectedResult = students.select(enroll,colList,conditionList);
+
+        assertEquals("A",expectedResult.get(0,1));
+        assertEquals("Alice",expectedResult.get(0,0));
+    }
 //
     private Table createStudentTalbe(){
         String[] columnTitles = new String[]{"SID", "Name", "Major"};
@@ -209,19 +209,19 @@ public class TableTest {
 //        return stduents;
 //    }
 //
-//    private Table createEnrollTable(){
-//        String[] columnTitles = new String[]{"CCN", "SID", "Grade"};
-//        Table stduents = new Table(columnTitles);
-//        String[] values = new String[]{"001", "1", "A+"};
-//        stduents.add(values);
-//        String[] values1 = new String[]{"002", "2", "B"};
-//        stduents.add(values1);
-//        String[] values2 = new String[]{"003", "2", "C"};
-//        stduents.add(values2);
-//        String[] values3 = new String[]{"004", "1", "A"};
-//        stduents.add(values3);
-//        return stduents;
-//    }
+    private Table createEnrollTable(){
+        String[] columnTitles = new String[]{"CCN", "SID", "Grade"};
+        Table stduents = new Table(columnTitles);
+        String[] values = new String[]{"001", "1", "A+"};
+        stduents.add(values);
+        String[] values1 = new String[]{"002", "2", "B"};
+        stduents.add(values1);
+        String[] values2 = new String[]{"003", "2", "C"};
+        stduents.add(values2);
+        String[] values3 = new String[]{"004", "1", "A"};
+        stduents.add(values3);
+        return stduents;
+    }
 
 
 
