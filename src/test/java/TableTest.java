@@ -192,20 +192,20 @@ public class TableTest {
         return stduents;
     }
 //
-//    private Table createScheduleTable(){
-//        String[] columnTitles = new String[]{"CCN", "Course", "Time",
-//                "Semester"};
-//        Table stduents = new Table(columnTitles);
-//        String[] values = new String[]{"001", "61A", "Wed","F"};
-//        stduents.add(values);
-//        String[] values1 = new String[]{"002", "61B", "Thur", "F"};
-//        stduents.add(values1);
-//        String[] values2 = new String[]{"003", "61C", "Friday","S"};
-//        stduents.add(values2);
-//        String[] values3 = new String[]{"004", "aep", "Friday","S"};
-//        stduents.add(values3);
-//        return stduents;
-//    }
+    private Table createScheduleTable(){
+        String[] columnTitles = new String[]{"CCN", "Course", "Time",
+                "Semester"};
+        Table stduents = new Table(columnTitles);
+        String[] values = new String[]{"001", "61A", "Wed","F"};
+        stduents.add(values);
+        String[] values1 = new String[]{"002", "61B", "Thur", "F"};
+        stduents.add(values1);
+        String[] values2 = new String[]{"003", "61C", "Friday","S"};
+        stduents.add(values2);
+        String[] values3 = new String[]{"004", "aep", "Friday","S"};
+        stduents.add(values3);
+        return stduents;
+    }
 //
     private Table createEnrollTable(){
         String[] columnTitles = new String[]{"CCN", "SID", "Grade"};
