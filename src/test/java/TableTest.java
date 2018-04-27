@@ -127,6 +127,20 @@ public class TableTest {
         assertEquals("Alice",expectedResult.get(0,0));
     }
 
+    @Test
+    public void selectTableWihtoutCondition(){
+        Table students = createStudentTalbe();
+        Table enroll = createEnrollTable();
+        List<String> colList = new ArrayList<>();
+        colList.add("Name");
+        colList.add("Grade");
+
+        List<Condition> conditionList = new ArrayList<>();
+        Table expectedResult = students.select(enroll,colList,conditionList);
+        assertEquals(4,expectedResult.size());
+
+    }
+
     private Table createStudentTalbe(){
         String[] columnTitles = new String[]{"SID", "Name", "Major"};
         Table stduents = new Table(columnTitles);
@@ -213,8 +227,8 @@ public class TableTest {
         db.put("enroll",enroll);
 
         assertEquals(null,db.get("sdcheule"));
-
     }
+
 
 
 }
