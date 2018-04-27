@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -254,7 +255,18 @@ public class TableTest {
         assertEquals(e, d);
     }
 
+    @Test
+    public void testGetTableFromDB() {
+        Table students = createStudentTalbe();
+        Table enroll = createEnrollTable();
 
+        Database db = new Database();
+        db.put("studdents",students);
+        db.put("enroll",enroll);
+
+        assertEquals(null,db.get("sdcheule"));
+
+    }
 
 
 }
