@@ -140,23 +140,23 @@ public class TableTest {
 //        table.print();
 //    }
 //
-//    @Test
-//    public void selectFromStudentTableWhereNameIsAlice(){
-//        Table students = createStudentTalbe();
+    @Test
+    public void selectFromStudentTableWhereNameIsAlice(){
+        Table students = createStudentTalbe();
+
+        List<String> colList = new ArrayList<>();
+        colList.add("Name");
+        colList.add("Major");
+        List<Condition> conditionList = new ArrayList<>();
+
+        Condition con = new Condition(new Column("Name",students),new String
+                ("="),new String("Alice"));
+        conditionList.add(con);
+        Table expectedResult = students.select(colList,conditionList);
+
+        assertEquals("Alice",expectedResult.get(0,0));
+    }
 //
-//        List<String> colList = new ArrayList<>();
-//        colList.add("Name");
-//        colList.add("Major");
-//        List<Condition> conditionList = new ArrayList<>();
-//
-//        Condition con = new Condition(new Column("Name",students),new String
-//                ("="),new String("Alice"));
-//        conditionList.add(con);
-//        Table expectedResult = students.select(colList,conditionList);
-//
-//        assertEquals("Alice",expectedResult.get(0,0));
-//    }
-////
 //
 //    @Test
 //    public void selectFromStudentAndEnrollTableWhoTakeCertainClass(){
