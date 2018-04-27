@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class TableTest {
 
@@ -92,18 +94,14 @@ public class TableTest {
 //        }
     }
 //
-//    @Test
-//    public void testAdd() {
-//        String[] columnTitles = new String[]{"SID", "Name", "Major"};
-//        Table table = new Table(columnTitles);
-//
-//        try {
-//            String[] values = new String[]{"1", "Alice", "MIMS", "CS61B"};
-//            table.add(values);
-//        } catch (DBException e) {
-//            System.out.print(e);
-//        }
-//    }
+    @Test
+    public void testAdd() {
+        String[] columnTitles = new String[]{"SID", "Name", "Major"};
+        Table table = new Table(columnTitles);
+        String[] values = new String[]{"1", "Alice", "MIMS", "CS61B"};
+        assertFalse(table.add(values));
+        //assertTrue(table.add(values));
+    }
 //
 //    @Test
 //    public void testReadTable() {
