@@ -1,15 +1,12 @@
 package db61b;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 public class TableTest {
 
@@ -31,15 +28,8 @@ public class TableTest {
         String actual = table.getTitle(1);
         String expected = "Name";
         assertEquals(expected, actual);
-
-//        try {
-//            String actual1 = table.getTitle(3);
-//            String actual2 = table.getTitle(-1);
-//        } catch (DBException e) {
-//            Assert.assertTrue(true);
-//        }
     }
-//
+
     @Test
     public void testFindColumn() {
         String[] columnTitles = new String[]{"SID", "Name", "Major"};
@@ -52,7 +42,7 @@ public class TableTest {
         int expected1 = -1;
         assertEquals(expected1, actual1);
     }
-//
+
     @Test
     public void testSize() {
         String[] columnTitles = new String[]{"SID", "Name", "Major"};
@@ -73,7 +63,7 @@ public class TableTest {
         int expected2 = 2;
         assertEquals(expected2, actual2);
     }
-//
+
     @Test
     public void testGet() {
         String[] columnTitles = new String[]{"SID", "Name", "Major"};
@@ -87,58 +77,17 @@ public class TableTest {
         String expected = "1";
         assertEquals(expected, actual);
 
-//        try {
-//            String actual1 = table.get(4, 0);
-//            Assert.assertTrue(false);
-//        } catch (DBException excp) {
-//            Assert.assertTrue(true);
-//        }
     }
-//
+
     @Test
     public void testAdd() {
         String[] columnTitles = new String[]{"SID", "Name", "Major"};
         Table table = new Table(columnTitles);
         String[] values = new String[]{"1", "Alice", "MIMS", "CS61B"};
         assertFalse(table.add(values));
-        //assertTrue(table.add(values));
+
     }
-//
-//    @Test
-//    public void testReadTable() {
-//
-//    }
-//
-//    @Test
-//    public void testWriteTable() {
-//
-//    }
-//
-//    @Test
-//    public void testPrint() {
-//        String[] columnTitles = new String[]{"SID", "Name", "Major"};
-//        Table table = new Table(columnTitles);
-//        String[] values = new String[]{"1", "Alice", "MIMS"};
-//        table.add(values);
-//        String[] values1 = new String[]{"2", "Jason", "EECS"};
-//        table.add(values1);
-//        String[] values2 = new String[]{"2", "Jason", "EECS23"};
-//        table.add(values2);
-//        String[] values3 = new String[]{"3", "Cindy", "Japanese"};
-//        table.add(values3);
-//
-//        table.print();
-//    }
-//
-//    @Test
-//    public void testPrint2() {
-//        String[] columnTitles = new String[]{"SID", "Name", "Major"};
-//        Table table = new Table(columnTitles);
-//        String[] values = new String[]{"1", "Alice", "MIMS"};
-//        table.add(values);
-//        table.print();
-//    }
-//
+
     @Test
     public void selectFromStudentTableWhereNameIsAlice(){
         Table students = createStudentTalbe();
@@ -155,8 +104,7 @@ public class TableTest {
 
         assertEquals("Alice",expectedResult.get(0,0));
     }
-//
-//
+
     @Test
     public void selectFromStudentAndEnrollTableWhoTakeCertainClass(){
         Table students = createStudentTalbe();
@@ -178,7 +126,7 @@ public class TableTest {
         assertEquals("A",expectedResult.get(0,1));
         assertEquals("Alice",expectedResult.get(0,0));
     }
-//
+
     private Table createStudentTalbe(){
         String[] columnTitles = new String[]{"SID", "Name", "Major"};
         Table stduents = new Table(columnTitles);
@@ -192,7 +140,7 @@ public class TableTest {
         stduents.add(values3);
         return stduents;
     }
-//
+
     private Table createScheduleTable(){
         String[] columnTitles = new String[]{"CCN", "Course", "Time",
                 "Semester"};
@@ -207,7 +155,7 @@ public class TableTest {
         stduents.add(values3);
         return stduents;
     }
-//
+
     private Table createEnrollTable(){
         String[] columnTitles = new String[]{"CCN", "SID", "Grade"};
         Table stduents = new Table(columnTitles);
